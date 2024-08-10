@@ -170,7 +170,7 @@ header{
 .button-links{
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 10px;
 
 }
 .button-links li a i{
