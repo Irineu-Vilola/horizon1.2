@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Raleway", sans-serif;
+    list-style: none;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    background-color: #e3e9f7;
+}
+
+
+
+#sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #ffffff;
+    height: 100vh;
+    border-radius: 0px 18px 18px 0px;
+    position: relative;
+    transition: all .5s;
+    min-width: 82px;
+    z-index: 2;
+}
+
+#sidebar_content {
+    padding: 12px;
+}
+
+#user {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+#logo {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+#logo_infos {
+    display: flex;
+    flex-direction: column;
+}
+
+#logo_infos span:last-child {
+    color: #6b6b6b;
+    font-size: 12px;
+}
+
+#side_items {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    list-style: none;
+}
+
+.side-item {
+    border-radius: 8px;
+    padding: 14px;
+    cursor: pointer;
+}
+.menu-linha{
+    border: 2px solid black;
+
+}
+
+.side-item.active {
+    background-color: #4f46e5;
+}
+
+.side-item:hover:not(.active),:hover {
+   color: #6b6b6b;
+}
+
+.side-item a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0a0a0a;
+}
+
+.side-item.active a {
+    color: #e3e9f7;
+}
+
+.side-item a i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+}
+
+
+
+#abrir_btn {
+    position: absolute;
+    top: 30px;
+    right: -10px;
+    background-color: #4f46e5;
+    color: #e3e9f7;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+#abrir_btn_icon {
+    font-size: 1em;
+    transition: transform .3s ease;
+}
+
+.open-sidebar #abrir_btn_icon {
+    transform: rotate(180deg);
+}
+
+.item-description {
+    width: 0px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    transition: width .6s;
+    height: 0px;
+}
+
+#sidebar.open-sidebar {
+    min-width: 15%;
+}
+
+#sidebar.open-sidebar .item-description {
+    width: 150px;
+    height: auto;
+}
+
+#sidebar.open-sidebar .side-item a {
+    justify-content: flex-start;
+    gap: 14px;
+}
+
+header{
+    padding: 20px;
+    position: fixed;
+    z-index: 1;
+    padding-left: calc(82px + 20px);
+    background-color: #b2a8a8;
+    width: 100%;
+
+}
+
+.header-content{
+    width: 94%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.button-links{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+}
+.button-links li a i{
+    font-size: 1.3em;
+    color: black;
+}
+
+/* Fundo do modal */
+dialog::backdrop {
+    background-color:#0a0a0ad2;
+    width: 100vw;
+    height: 100vh;
+  
+}
+
+/* Modal */
+dialog {
+    
+    border: none;
+    width: 350px;
+    margin: auto;
+    border-radius: 24px;
+    padding: 18px;
+}
+
+/* Cabeçalho do modal */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+/* Título do modal */
+.modal-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #111928;
+}
+
+/* Botão de fechar modal */
+.close-modal {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    color: #9CA3AF;
+    font-size: 18px;
+}
+
+/* Corpo do modal */
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Input do formulário */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+/* Label do input */
+.input-group label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #111928;
+}
+
+/* Input */
+.input-group input {
+    border: 1px solid #D1D5DB;
+    background-color: #F9FAFB;
+    border-radius: 8px;
+    padding: 10px 16px;
+}
+
+/* Input com foco */
+.input-group input:focus {
+    outline: 1px solid #6366f1;
+}
+
+/* Opções de senha */
+.password-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Checkbox de lembrar senha */
+.remember-password {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    color: #111928;
+}
+
+/* Link de esqueci a senha */
+.forgot-password {
+    font-size: 12px;
+    color: #1C64F2;
+    text-decoration: none;
+}
+
+/* Botão de login */
+#login_button {
+    background-color: #6366F1;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Rodapé do modal */
+.register span {
+    font-size: 14px;
+    color: #6B7280;
+}
+
+/* Link de registrar */
+.register a {
+    font-size: 14px;
+    color: #1C64F2;
+    text-decoration: none;
+}
+
+
+main {
+    padding: 20px;
+    position: fixed;
+    z-index: 1;
+    padding-left: calc(82px + 20px);
+}
